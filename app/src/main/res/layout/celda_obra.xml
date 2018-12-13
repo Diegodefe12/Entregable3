@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="100dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="11"
+        android:layout_height="100dp"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/celdaObra_textView_tituloObra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Titulo Obra"/>
+
+        <TextView
+            android:id="@+id/celdaObra_textView_autorObra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Autor"/>
+
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
