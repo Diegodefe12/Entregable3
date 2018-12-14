@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "120947230841",
+    "firebase_url": "https://entregable3-a6b35.firebaseio.com",
+    "project_id": "entregable3-a6b35",
+    "storage_bucket": "entregable3-a6b35.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:120947230841:android:4a572ff7ddb85bd4",
+        "android_client_info": {
+          "package_name": "app.diego.com.entregable3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "120947230841-5hhgtdmhln1tv1tt633b3vd2utjqnq03.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.diego.com.entregable3",
+            "certificate_hash": "14984b42219ebb1d6e49a27fe95fb39f46ae16e1"
+          }
+        },
+        {
+          "client_id": "120947230841-mcu5ikcrghf67aeq2m2lpeurn7buo3cr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDniXbD3sa5U0BqOUa5Avntc0lKxhKW1cQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "120947230841-mcu5ikcrghf67aeq2m2lpeurn7buo3cr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
