@@ -1,19 +1,13 @@
 package app.diego.com.entregable3;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.Adapter;
 import android.widget.TextView;
 
-import java.util.List;
-
+import app.diego.com.entregable3.Adapter.ObrasAdapter;
 import app.diego.com.entregable3.Controller.ObrasController;
-import app.diego.com.entregable3.Model.POJO.Obra;
 import app.diego.com.entregable3.Model.POJO.ObrasContainer;
 import app.diego.com.entregable3.Util.ResultListener;
 
@@ -33,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 */
+
         getObras();
 
         recyclerViewObras = findViewById(R.id.activityMain_recyclerView);

@@ -1,4 +1,4 @@
-package app.diego.com.entregable3;
+package app.diego.com.entregable3.Adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -12,6 +12,7 @@ import java.util.List;
 
 import app.diego.com.entregable3.Model.POJO.Obra;
 import app.diego.com.entregable3.Model.POJO.ObrasContainer;
+import app.diego.com.entregable3.R;
 
 public class ObrasAdapter extends RecyclerView.Adapter {
 
