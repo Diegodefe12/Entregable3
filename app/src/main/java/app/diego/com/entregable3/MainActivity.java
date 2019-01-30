@@ -1,5 +1,6 @@
 package app.diego.com.entregable3;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,10 +9,11 @@ import android.widget.TextView;
 
 import app.diego.com.entregable3.Adapter.ObrasAdapter;
 import app.diego.com.entregable3.Controller.ObrasController;
+import app.diego.com.entregable3.Model.POJO.Obra;
 import app.diego.com.entregable3.Model.POJO.ObrasContainer;
 import app.diego.com.entregable3.Util.ResultListener;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ObrasAdapter.ListenerObrasAdapter{
     private TextView textViewPrueba;
     private ObrasAdapter adapter;
     private RecyclerView recyclerViewObras;
@@ -34,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        adapter = new ObrasAdapter();
+        adapter = new ObrasAdapter(this);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
 
         recyclerViewObras.setLayoutManager(linearLayoutManager);
@@ -55,16 +57,27 @@ public class MainActivity extends AppCompatActivity {
     }*/
 
     public void getObras() {
-        //Instancio un controller
         ObrasController obrasController = new ObrasController();
-        //Pido al controller pasandole el listener del tipo del resultado esperado
         obrasController.getObrasContainer(new ResultListener<ObrasContainer>() {
             @Override
-            //Método que se ejecuta cuando el controller me avisa que el pedido terminó
             public void finish(ObrasContainer result) {
-                //Recibo la información correspondiente
                 adapter.setListaDeObras(result.getPaints());
             }
         });
     }
+
+
+    @Override
+    public void informarSeleccionado(Obra obra) {
+
+        Intent intent = new Intent(MainActivity.this, DetalleActivity.class);
+
+        Bundle bundle = new Bundle();
+
+        bundle.putSerializable(DetalleActivity.KEY_OBRA,obra);
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
+
+
 }

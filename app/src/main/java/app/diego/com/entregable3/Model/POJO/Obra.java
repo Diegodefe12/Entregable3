@@ -1,6 +1,8 @@
 package app.diego.com.entregable3.Model.POJO;
 
-public class Obra {
+import java.io.Serializable;
+
+public class Obra implements Serializable {
 
     private String artistId;
     private String name;

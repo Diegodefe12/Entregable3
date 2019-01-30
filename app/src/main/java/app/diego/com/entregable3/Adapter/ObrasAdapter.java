@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,9 +18,13 @@ import app.diego.com.entregable3.R;
 public class ObrasAdapter extends RecyclerView.Adapter {
 
     private List<Obra> listaDeObras;
+    private ListenerObrasAdapter listenerObrasAdapter;
 
-    public ObrasAdapter() {
+
+    public ObrasAdapter(ListenerObrasAdapter listenerObrasAdapter) {
         listaDeObras = new ArrayList<>();
+        this.listenerObrasAdapter = listenerObrasAdapter;
+
     }
 
     public void setListaDeObras(List<Obra> listaDeObras) {
@@ -58,10 +63,18 @@ public class ObrasAdapter extends RecyclerView.Adapter {
         private Obra obra;
 
 
-        public ObrasViewHolder(@NonNull View itemView) {
+        public ObrasViewHolder(@NonNull final View itemView) {
             super(itemView);
             this.textViewTitulo = itemView.findViewById(R.id.celdaObra_textView_tituloObra);
             this.textViewAutor = itemView.findViewById(R.id.celdaObra_textView_autorObra);
+
+                itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        listenerObrasAdapter.informarSeleccionado(obra);
+
+                    }
+                });
 
 
         }
@@ -73,4 +86,11 @@ public class ObrasAdapter extends RecyclerView.Adapter {
 
         }
     }
+
+    public interface ListenerObrasAdapter{
+        public void informarSeleccionado(Obra obra);
+    }
+
+
+
 }
